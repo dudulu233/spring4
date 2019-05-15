@@ -2,7 +2,54 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
     <!--这是schema约束-->
-    <bean id="user" class="luo.spring4.ioc.User"></bean>
+
+    <bean id="user" class="luo.spring4.ioc.User" scope="prototype">
+        <!--有参构造实例测试-->
+        <constructor-arg name="name" value="test1"></constructor-arg>
+        <!--set方法注入属性-->
+        <property name="age" value="22"></property>
+    </bean>
+
+    <bean id="userDao" class="luo.spring4.ioc.UserDao" scope="prototype"></bean>
+
+    <bean id="userService" class="luo.spring4.ioc.UserService" scope="prototype">
+        <property name="userDao" ref="userDao"></property>
+        <!--ref注入对象-->
+    </bean>
+
+    <!--注入复杂类型属性值-->
+    <bean id="person" class="luo.spring4.ioc.Person">
+        <property name="arrs">
+            <list>
+                <value>小明11</value>
+                <value>小明12</value>
+                <value>小明13</value>
+                <value>小明14</value>
+            </list>
+        </property>
+        <property name="list">
+            <list>
+                <value>小明21</value>
+                <value>小明22</value>
+                <value>小明23</value>
+                <value>小明24</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="xm31" value="小明31"></entry>
+                <entry key="xm32" value="小明32"></entry>
+                <entry key="xm32" value="小明32"></entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="driverclass">com.mysql.jdbc.Driver</prop>
+                <prop key="username">root</prop>
+                <prop key="password">123456</prop>
+            </props>
+        </property>
+
+    </bean>
 </beans>

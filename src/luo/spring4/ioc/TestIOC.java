@@ -13,9 +13,18 @@ public class TestIOC {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean1.xml");
 
         //得到对象
-        User user = (User) context.getBean("user");
-        System.out.println(user);
-        user.add();
+//        User user1 = (User) context.getBean("user");
+//        System.out.println(user1.getName());
+//        System.out.println(user1.getAge());
+//        user1.add();
+
+//        UserService userService = (UserService) context.getBean("userService");
+//        userService.add();
+
+        Person person = (Person) context.getBean("person");
+        person.showall();
+
+
 
     }
 
