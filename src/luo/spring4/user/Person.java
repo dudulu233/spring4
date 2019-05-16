@@ -1,4 +1,4 @@
-package luo.spring4.ioc;
+package luo.spring4.user;
 
 import java.util.List;
 import java.util.Map;

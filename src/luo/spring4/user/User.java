@@ -1,5 +1,9 @@
-package luo.spring4.ioc;
+package luo.spring4.user;
 
+
+import org.springframework.stereotype.Component;
+
+@Component(value = "user")
 public class User {
     private String name;
     private int age;

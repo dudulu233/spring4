@@ -4,22 +4,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--这是schema约束-->
 
-    <bean id="user" class="luo.spring4.ioc.User" scope="prototype">
+    <bean id="user" class="luo.spring4.user.User" scope="prototype">
         <!--有参构造实例测试-->
         <constructor-arg name="name" value="test1"></constructor-arg>
         <!--set方法注入属性-->
         <property name="age" value="22"></property>
     </bean>
 
-    <bean id="userDao" class="luo.spring4.ioc.UserDao" scope="prototype"></bean>
+    <bean id="userDao" class="luo.spring4.user.UserDao" scope="prototype"></bean>
 
-    <bean id="userService" class="luo.spring4.ioc.UserService" scope="prototype">
+    <bean id="userService" class="luo.spring4.user.UserService" scope="prototype">
         <property name="userDao" ref="userDao"></property>
         <!--ref注入对象-->
     </bean>
 
     <!--注入复杂类型属性值-->
-    <bean id="person" class="luo.spring4.ioc.Person">
+    <bean id="person" class="luo.spring4.user.Person">
         <property name="arrs">
             <list>
                 <value>小明11</value>
