@@ -10,6 +10,7 @@ public class Testaop {
         ApplicationContext context= new ClassPathXmlApplicationContext("spring_aop.xml");
         Book book = (Book) context.getBean("book");
         book.add();
+
     }
 
 }

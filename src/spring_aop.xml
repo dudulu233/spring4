@@ -20,6 +20,9 @@
 
             <!--配置后置增强-->
             <aop:after-returning method="after1" pointcut-ref="pointcut1"/>
+
+            <!--配置环绕-->
+            <aop:around method="around1" pointcut-ref="pointcut1"/>
         </aop:aspect>
 
     </aop:config>
